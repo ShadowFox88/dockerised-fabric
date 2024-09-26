@@ -9,6 +9,8 @@ if ! exists docker; then
     echo "Docker is required for this project, please install Docker:\n"
 
     echo "https://docs.docker.com/engine/install/"
+
+    exit 1
 elif [[ ! -d "$PWD/dockerised-fabric/" || ! "$(basename $PWD)" = "dockerised-fabric" ]]; then
     if exists gh || exists git; then
         if exists gh; then
@@ -33,6 +35,8 @@ elif [[ ! -d "$PWD/dockerised-fabric/" || ! "$(basename $PWD)" = "dockerised-fab
         echo "- git"
         echo "- wget"
         echo "- curl\n"
+
+        exit 1
     fi
 fi
 
